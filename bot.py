@@ -387,34 +387,34 @@ def get_full_day_name(short_name: str) -> str:
 
 def process_day_lessons(row, day_data, day_index):
     """Обрабатывает пары в строке для конкретного дня"""
+    hd_cells = row.find_all('td', class_='hd')
+    if not hd_cells:
+        return
 
-    lesson_num_cell = row.find('td', class_='hd')
-    if not lesson_num_cell or 'rowspan' in lesson_num_cell.attrs:
-        return 
-    
+    lesson_num_cell = next((c for c in hd_cells if 'rowspan' not in c.attrs), None)
+    if lesson_num_cell is None:
+        return
+
     lesson_num_text = lesson_num_cell.get_text(strip=True)
     lesson_num_match = re.search(r'(\d+)', lesson_num_text)
     lesson_num = int(lesson_num_match.group(1)) if lesson_num_match else 0
-    
 
     lesson_cell = row.find('td', class_='ur')
     if not lesson_cell:
-        return  
-    
+        return
+
     cell_text = lesson_cell.get_text(strip=True)
-    if not cell_text or cell_text in ['&nbsp;', ' ', '']:
-        return  
-    
+    if not cell_text or cell_text in ['&nbsp;', ' ', '']:
+        return
 
     subject = ''
     teacher = ''
     room = ''
-    
 
     subject_link = lesson_cell.find('a', class_='z1')
     room_link = lesson_cell.find('a', class_='z2')
     teacher_link = lesson_cell.find('a', class_='z3')
-    
+
     if subject_link:
         subject = subject_link.get_text(strip=True)
     if room_link:
