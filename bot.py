@@ -391,7 +391,6 @@ def process_day_lessons(row, day_data, day_index):
     if not hd_cells:
         return
 
-    # Берём ячейку номера пары: td.hd без rowspan (rowspan обычно у ячейки дня)
     lesson_num_cell = next((c for c in hd_cells if 'rowspan' not in c.attrs), None)
     if lesson_num_cell is None:
         return
