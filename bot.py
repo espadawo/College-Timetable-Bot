@@ -18,7 +18,7 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 
-BOT_TOKEN = "YOUR BOT TOKEN HERE"
+BOT_TOKEN = "8470633153:AAFmmrT2Ny0TAoP1S9xboZBEEbECzTPA0To"
 
 
 BASE_URL = "http://94.72.18.202:8083"
@@ -52,7 +52,7 @@ bot = Bot(token=BOT_TOKEN)
 dp = Dispatcher()
 
 
-MAIN_ADMIN_ID = "YOUR TG ID"  
+MAIN_ADMIN_ID = "8245959926"  
 
 
 class AdminStates(StatesGroup):
