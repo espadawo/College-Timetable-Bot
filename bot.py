@@ -52,7 +52,7 @@ bot = Bot(token=BOT_TOKEN)
 dp = Dispatcher()
 
 
-MAIN_ADMIN_ID = "8245959926"  
+MAIN_ADMIN_ID = "YOUR ID HERE"  
 
 
 class AdminStates(StatesGroup):
@@ -1777,3 +1777,4 @@ async def main():
 if __name__ == "__main__":
 
     asyncio.run(main())
+
