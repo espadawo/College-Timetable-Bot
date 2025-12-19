@@ -18,7 +18,7 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 
-BOT_TOKEN = "8470633153:AAFmmrT2Ny0TAoP1S9xboZBEEbECzTPA0To"
+BOT_TOKEN = "YOUR TOKEN BOT HERE"
 
 
 BASE_URL = "http://94.72.18.202:8083"
@@ -1775,4 +1775,5 @@ async def main():
     await dp.start_polling(bot)
 
 if __name__ == "__main__":
+
     asyncio.run(main())
